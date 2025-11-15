@@ -1,0 +1,19 @@
+# MySQL Server configuration for Pimcore.
+# @See https://dev.mysql.com/doc/refman/8.0/en/option-files.html
+# @See https://pimcore.com/docs/pimcore/11.0/Development_Documentation/Installation_and_Upgrade/System_Setup_and_Hosting/DB_Setup.html
+
+# Applies to any client connecting to this sever
+[client]
+default-character-set=utf8mb4
+
+# Applies to mysql cli client application
+[mysql]
+default-character-set=utf8mb4
+
+# Applies to mysql server
+[mysqld]
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+init-connect='SET NAMES utf8mb4'
+lower_case_table_names=1
+innodb_strict_mode=OFF
