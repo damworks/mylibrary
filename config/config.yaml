@@ -109,17 +109,21 @@ framework:
 #        json_manifest_path: '%kernel.project_dir%/public/build/manifest.json'
 
 #### USE CUSTOM CACHE POOL
-#    cache:
-#        pools:
-#            pimcore.cache.pool:
-#                public: true
-#                default_lifetime: 31536000  # 1 year
-#                adapter: cache.adapter.redis_tag_aware
+    cache:
+        pools:
+            pimcore.cache.pool:
+                public: true
+                default_lifetime: 604800 # 7 days  #31536000  # 1 year
+                adapter: cache.adapter.redis_tag_aware
 #                provider: 'redis://localhost' # Redis DNS, see: https://symfony.com/doc/current/components/cache/adapters/redis_adapter.html#configure-the-connection
+                provider: '%env(resolve:REDIS_DNS)%'
 
 #### USE SESSION HANDLER CONFIGURED IN php.ini
-#    session:
-#        handler_id: null
+    session:
+        handler_id: '%env(resolve:REDIS_DNS)%'
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%' ## fallback
+        cookie_lifetime: 86400  # 1 day
+        gc_maxlifetime: 86400
 
 #### SYMFONY MAILER TRANSPORTS
 #    mailer:
