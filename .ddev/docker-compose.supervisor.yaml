@@ -1,0 +1,6 @@
+services:
+    web:
+        ports:
+            - "9001:9001"
+        volumes:
+            - ./supervisor/conf.d:/etc/supervisor/conf.d
