@@ -1,0 +1,26 @@
+framework:
+  messenger:
+    failure_transport: failed
+
+    transports:
+      # coda per i job "core" di Pimcore
+      pimcore_core: '%env(MESSENGER_TRANSPORT_DSN)%?auto_setup=1&queue_name=pimcore_core'
+      # manutenzione
+      pimcore_maintenance: '%env(MESSENGER_TRANSPORT_DSN)%?auto_setup=1&queue_name=pimcore_maintenance'
+      # scheduled tasks
+      pimcore_scheduled_tasks: '%env(MESSENGER_TRANSPORT_DSN)%?auto_setup=1&queue_name=pimcore_scheduled_tasks'
+      # ottimizzazione immagini
+      pimcore_image_optimize: '%env(MESSENGER_TRANSPORT_DSN)%?auto_setup=1&queue_name=pimcore_image_optimize'
+      # aggiornamenti asset (webdav/preview ecc.)
+      pimcore_asset_update: '%env(MESSENGER_TRANSPORT_DSN)%?auto_setup=1&queue_name=pimcore_asset_update'
+      # gestione e l’aggiornamento asincrono dell’indice di ricerca backend (dataobject/assets/documents)
+      pimcore_search_backend_message: '%env(MESSENGER_TRANSPORT_DSN)%?auto_setup=1&queue_name=pimcore_search_backend_message'
+
+      # failure transport sul DB (coda dedicata "failed")
+      failed: '%env(MESSENGER_FAILURE_TRANSPORT_DSN)%?auto_setup=1&queue_name=failed'
+
+      #pimcore_core: 'amqp://rabbitmq:5672/%2f/pimcore_core'
+      #pimcore_maintenance: 'amqp://rabbitmq:5672/%2f/pimcore_maintenance'
+      #pimcore_scheduled_tasks: 'amqp://rabbitmq:5672/%2f/pimcore_scheduled_tasks'
+      #pimcore_image_optimize: 'amqp://rabbitmq:5672/%2f/pimcore_image_optimize'
+      #pimcore_asset_update: 'amqp://rabbitmq:5672/%2f/pimcore_asset_update'
