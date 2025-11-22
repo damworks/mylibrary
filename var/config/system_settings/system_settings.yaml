@@ -6,7 +6,7 @@ pimcore:
             - en
             - it
         fallback_languages:
-            en: ''
+            en: it
             it: ''
         required_languages:
             - it
