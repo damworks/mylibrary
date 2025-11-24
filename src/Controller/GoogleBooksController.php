@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Attribute\Route;
 class GoogleBooksController extends AbstractController
 {
     #[Route('/google-books', name: 'google_books', methods: ['GET'])]
-    public function testAction(Request $request, GoogleBooksClient $googleBooksClient): JsonResponse
+    public function googleBooksAction(Request $request, GoogleBooksClient $googleBooksClient): JsonResponse
     {
         $isbn = trim((string) $request->query->get('isbn', ''));
 
