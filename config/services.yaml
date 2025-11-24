@@ -59,7 +59,10 @@ services:
         resource: '../src/Command/*'
         tags: [ 'console.command' ]
 
-
+    App\Service\GoogleBooksClient:
+        arguments:
+            $client: '@http_client'
+            $apiKey: '%env(GOOGLE_BOOKS_API_KEY)%'
 
     # Example custom templating helper
     # App\Templating\Helper\Example:
