@@ -30,7 +30,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1763796962,
+   'modificationDate' => 1763929776,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => 'App\\Model\\Product\\AbstractPublication',
@@ -75,7 +75,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
         array (
           0 => 
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'name' => 'Layout',
+             'name' => 'General Information',
              'type' => NULL,
              'region' => NULL,
              'title' => 'General Information',
@@ -387,7 +387,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           )),
           1 => 
           \Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
-             'name' => 'Layout',
+             'name' => 'Codes',
              'type' => NULL,
              'region' => NULL,
              'title' => 'Codes',
